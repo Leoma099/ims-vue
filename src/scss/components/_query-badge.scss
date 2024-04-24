@@ -1,0 +1,16 @@
+.sc-query-badge
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.375rem 0.75rem;
+    color: $black;
+    width: 100px;
+    border-radius: 1rem;
+}
+
+.sc-query-badge-default
+{
+    background-color: $black;
+    color: $white;
+}

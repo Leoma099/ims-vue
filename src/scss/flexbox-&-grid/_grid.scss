@@ -1,0 +1,20 @@
+// Grid Template Columns
+@include build-grid-template-columns;
+
+// Grid Column Span Start End
+@include build-grid-column-span;
+@include build-grid-column-start;
+@include build-grid-column-end;
+
+// Grid Template Row
+@include build-grid-template-rows;
+
+// Grid Row Span Start End
+@include build-grid-row-span;
+@include build-grid-row-start;
+@include build-grid-row-end;
+
+.sc-grid
+{
+    display: grid;
+}

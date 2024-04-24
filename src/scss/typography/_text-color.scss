@@ -1,0 +1,14 @@
+// Text Status Color
+$text-color: () !default;
+$text-color:
+(
+    primary:       $primary,
+    secondary:     $secondary,
+    success:       $success,
+    warning:       $warning,
+    info:          $info,
+    inverse:       $inverse,
+    default:       $default,
+);
+
+@include create-text-status-color-code(text);

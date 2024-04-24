@@ -1,0 +1,74 @@
+.sc-sidebar
+{
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: #fff;
+    font-size: 14px;
+    z-index: 100;
+    text-align: left;
+    padding-top: 60px;
+    overflow-y: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    transition: width 300ms ease-in-out;
+    opacity: 1;
+}
+
+// .sc-sidebar:hover
+// {
+//     overflow-y: scroll;
+// }
+
+.sc-sidebar ul
+{
+    list-style-type: none;
+    padding-left: 0;
+    margin: 20px;
+}
+
+.sc-sidebar ul li
+{
+    font-size: 0.9em;
+    height: 30px;
+    line-height: 40px;
+    color: #ffffff  ;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.sc-sidebar ul li  a
+{
+    position: relative;
+    line-height: 1.9;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: #000000;
+    display: block;
+    border-radius: 4px;
+    margin: 5px 10px;
+    padding: 3px 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.sc-sidebar ul li a:hover
+{
+    color: #006eff;
+}
+
+.sc-sidebar .sc-logo
+{
+    line-height: 30px;
+}
+
+.sc-logo
+{
+    display: block;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5rem;
+}

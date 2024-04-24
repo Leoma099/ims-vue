@@ -1,0 +1,527 @@
+// Name:            Badge
+// Description:     Component to create button elements
+//
+// Component:       `sc-button`
+//                  `sc-button-small`
+//                  `sc-button-medium`
+//                  `sc-button-large`
+//                  `sc-button-success`
+//                  `sc-button-danger`
+//                  `sc-button-warning`
+//                  `sc-button-info`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$button-line-height:                        control-height(medium) !default;
+$button-small-line-height:                  control-height(small) !default;
+$button-large-line-height:                  control-height(medium) !default;
+
+$button-font-size:                          font(font-size) !default; 
+$button-small-font-size:                    font-size(small) !default;
+$button-large-font-size:                    font(font-size) !default;
+
+$button-padding-horizontal:                 gutter(small) !default;
+$button-small-padding-horizontal:           gutter(xsmall) !default;
+$button-large-padding-horizontal:           gutter(large) !default;
+
+$button-border-radius:                      border(border-radius) !default;
+$button-border-width:                       border(border-width) !default;
+$button-border-color:                       border(border-color) !default;
+
+$button-disabled-background:                #D1D1D1 !default;
+$button-disabled-color:                     color(default) !default;
+$button-disabled-border-color:              $global-muted-background !default;
+
+$button-text-line-height:                   font(line-height) !default;
+$button-text-color:                         color(disabled) !default;
+$button-text-hover-color:                   color(default) !default;
+$button-text-disabled-color:                color(disabled) !default;
+
+$button-link-color:                         link(base) !default;
+$button-link-hover-color:                   link(dark) !default;
+$button-link-line-height:                   font(line-height) !default;
+$button-link-hover-text-decoration:         underline !default;
+$button-link-disabled-color:                color(disabled) !default;
+
+$button-icon-width:                         $button-line-height !default;
+$button-icon-background:                    darken(color(inverse), 10%) !default;
+$button-icon-color:                         color(default);
+
+$button-icon-primary-background:            lighten(color(primary), 10%) !default;
+$button-icon-primary-color:                 color(inverse);
+
+$button-icon-secondary-background:          lighten(color(secondary), 10%) !default;
+$button-icon-secondary-color:               color(inverse);
+
+$button-icon-success-background:            lighten(color(success), 10%) !default;
+$button-icon-success-color:                 color(inverse);
+
+$button-icon-warning-background:            lighten(color(warning), 10%) !default;
+$button-icon-warning-color:                 color(inverse);
+
+$button-icon-danger-background:             lighten(color(danger), 10%) !default;
+$button-icon-danger-color:                  color(inverse);
+
+// Default Styles of Button Element
+// .sc-button
+// {
+//     display: inline-block;      // 1
+//     padding: 8px 20px;          // 2
+//     font-size: 1rem;            // 3
+//     font-weight: 500;           // 4
+//     line-height: 1.5;           // 5
+//     text-align: center;         // 6
+//     text-decoration: none;      // 7
+//     vertical-align: middle;     // 8
+//     cursor: pointer;            // 9
+//     appearance: none;           // 10 Overbalance the appearance property that pre-owned contribute a platform-native styling based on the user (OS) Operating System.
+//     border: none;               // 11
+//     background: transparent;    // 12
+//     border-radius: 0.25rem;     // 13
+
+// }
+
+.sc-button
+{
+    margin: 0;
+    border: none;
+    border-radius: $button-border-radius;
+    overflow: visible;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 $button-padding-horizontal;
+    vertical-align: middle;
+    font-size: $button-font-size;
+    line-height: $button-line-height;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.15s ease-in-out, box-shadow 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.sc-button:not(:disabled)
+{
+    cursor: pointer;
+}
+
+.sc-button:disabled
+{
+    cursor: not-allowed;
+}
+
+.sc-button::-moz-focus-inner
+{
+    border: 0;
+    padding: 0;
+}
+
+.sc-button:hover
+{
+    /* 8 */
+    text-decoration: none;
+}
+
+.sc-button:focus
+{
+    outline: none;
+}
+
+.sc-button-default:disabled,
+.sc-button-primary:disabled,
+.sc-button-secondary:disabled,
+.sc-button-success:disabled,
+.sc-button-warning:disabled,
+.sc-button-danger:disabled{
+    background-color: $button-disabled-background;
+    color: $button-disabled-color;
+    border: 1px solid $button-disabled-border-color;
+
+    &:hover, &:focus{
+        background-color: $button-disabled-background;
+        color: $button-disabled-color;
+        border: 1px solid $button-disabled-border-color;
+    }
+}
+
+@include create-button-background-color(button);
+@include create-button-outline-color(outline);
+
+.sc-button
+{
+    position: relative;
+}
+
+.sc-button-wave
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: 2;
+    transition: top 0.25s ease-in-out;
+    background-color: #000000;
+    animation-name: button-wave-effect;
+    animation-duration: 0.8s;
+}
+
+@keyframes button-wave-effect
+{
+    0%{
+        top: 100%;
+        opacity: 0.05;
+    }
+
+    50%{
+        top: 0;
+        opacity: 0.1;
+    }
+
+    100%{
+        top: 0;
+        opacity: 0;
+    }
+}
+
+.sc-button-small
+{
+    padding: 0 $button-small-padding-horizontal;
+    line-height: $button-small-line-height;
+    font-size: $button-small-font-size;
+}
+
+.sc-button-large
+{
+    padding: gutter(xsmall) $button-large-padding-horizontal;
+    line-height: $button-large-line-height;
+    font-size: $button-large-font-size;
+}
+
+.sc-button-wide
+{
+    padding: 0 $button-large-padding-horizontal;
+}
+
+.sc-button-text
+{
+    /* 1 */
+    padding: 0;
+    line-height: $button-text-line-height;
+    background: none;
+    border: none;
+    /* 2 */
+    color: inherit;
+}
+
+.sc-button-text-default:disabled,
+.sc-button-text-primary:disabled,
+.sc-button-text-secondary:disabled,
+.sc-button-text-success:disabled,
+.sc-button-text-warning:disabled
+.sc-button-text-danger:disabled
+{
+    color: $button-text-disabled-color;
+    cursor: not-allowed;
+
+    &:hover,
+    &:focus{
+        color: $button-text-disabled-color;
+        cursor: not-allowed;
+    }
+}
+
+@include create-modifiers-with-selectors(text, button);
+
+.sc-button-link
+{
+    padding: 0;
+    line-height: $button-link-line-height;
+    background: none;
+    color: $button-link-color;
+}
+
+.sc-button-link:hover,
+.sc-button-link:focus{
+    color: $button-link-hover-color;
+    text-decoration: $button-link-hover-text-decoration;
+}
+
+.sc-button-link:disabled{
+    color: $button-link-disabled-color;
+    text-decoration: none;
+}
+
+.sc-button-group
+{
+    /* 1 */
+    display: inline-flex;
+    /* 2 */
+    vertical-align: middle;
+    /* 3 */
+    position: relative;
+
+    background-color: #F9F9F9;
+    border-radius: 100px;
+}
+
+.sc-button-group * {
+    border-color: transparent;
+}
+
+.sc-button-group button.sc-button-default
+{
+    background-color: transparent;
+}
+
+.sc-button-group button
+{
+    border-radius: 100px;
+}
+
+.sc-button-ghost{
+    background-color: transparent;
+    color: color(disabled);
+    border: 1px dashed color(disabled);
+}
+
+.sc-button-ghost:hover,
+.sc-button-ghost:focus
+{
+    color: color(default);
+    border-color: color(default);
+}
+
+.sc-button-full-rounded
+{
+    border-radius: 100px;
+}
+
+.sc-button-semi-rounded
+{
+    border-radius: 10px;
+}
+
+.sc-button-icon{
+    padding: 0;
+    height: $button-line-height;
+    width: $button-line-height;
+}
+
+.sc-upload-label-button
+{
+    margin: 0;
+    border: none;
+    border-radius: border(border-radius);
+    overflow: visible;
+    font: inherit;
+    color: color(primary);
+    border: 1px solid color(primary);
+    background-color: transparent;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 14px;
+    vertical-align: middle;
+    font-size: 9px;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.sc-upload-label-button:hover
+{
+    color: darken(color(primary), 10%);
+    border-color: darken(color(primary), 10%);
+}
+
+.sc-upload-area
+{
+    background-color: #ECECEC;
+    min-height: 150px;
+    text-align: center;
+    padding: 25px 25px;
+}
+
+.sc-button-tentative
+{
+    background: #FFFF00 ;
+    color: black !important;
+}
+.sc-button-tentative:hover
+{
+    background-color: #FFFF00;
+    border: 1px solid #FFFF00;
+    color: #FFFF00;
+}
+
+.sc-button-confirmed
+{
+    background: #008000 ;
+    color: color(inverse) !important;
+}
+.sc-button-confirmed:hover
+{
+    background-color: transparent;
+    border: 1px solid #008000 ;
+    color: #008000 !important;
+}
+
+.sc-button-check-in
+{
+    background: #008000 ;
+    color: color(inverse) !important;
+}
+.sc-button-check-in:hover
+{
+    background-color: transparent;
+    border: 1px solid #008000 ;
+    color: #008000 !important;
+}
+
+.sc-button-check-out
+{
+    background: #008000;
+    color: #171717;
+}
+.sc-button-check-out:hover
+{
+    background-color: transparent;
+    border: 1px solid #008000 ;
+    color: #008000 !important;
+}
+
+.sc-button-canceled
+{
+    background: #FFA500 ;
+    color: color(inverse) !important;
+}
+.sc-button-canceled:hover
+{    
+    background-color: transparent;
+    border: 1px solid #FFA500 ;
+    color: #FFA500 !important;
+}
+
+.sc-button-rebooked
+{
+    background: #90EE90;
+    color: color(inverse) !important;
+}
+.sc-button-rebooked:hover
+{
+    background-color: transparent;
+    border: 1px solid #90EE90 ;
+    color: #90EE90 !important;
+}
+
+.sc-button-no-show
+{
+    background: #E53B3B;
+    color: color(inverse) !important;
+}
+.sc-button-no-show:hover
+{
+    background-color: transparent;
+    border: 1px solid #E53B3B ;
+    color: #E53B3B !important;
+}
+
+
+
+.sc-button-outline-tentative
+{
+    background-color: transparent;
+    border: 1px solid #FFFF00 ;
+    color: #FFFF00;
+}
+.sc-button-outline-tentative:hover
+{
+    background-color: #FFFF00;
+    border: 1px solid #FFFF00;
+    color: #FFFFFF;
+}
+
+.sc-button-outline-confirmed
+{
+    background-color: transparent;
+    border: 1px solid #008000 ;
+    color: #008000;
+}
+.sc-button-outline-confirmed:hover
+{
+    background-color: #008000;
+    border: 1px solid #008000;
+    color: #FFFFFF;
+}
+
+.sc-button-outline-check-in
+{
+    background-color: transparent;
+    border: 1px solid #008000 ;
+    color: #008000;
+}
+.sc-button-outline-check-in:hover
+{
+    background-color: #008000;
+    border: 1px solid #008000;
+    color: #FFFFFF;
+}
+
+.sc-button-outline-check-out
+{
+    background-color: transparent;
+    border: 1px solid #008000 ;
+    color: #008000;
+}
+.sc-button-outline-check-out:hover
+{
+    background-color: #008000;
+    border: 1px solid #008000;
+    color: #FFFFFF;
+}
+
+.sc-button-outline-canceled
+{    
+    background-color: transparent;
+    border: 1px solid #FFA500 ;
+    color: #FFA500;
+}
+.sc-button-outline-canceled:hover
+{
+    background-color: #FFA500;
+    border: 1px solid #FFA500;
+    color: #FFFFFF;
+}
+
+.sc-button-outline-rebooked
+{
+    background-color: transparent;
+    border: 1px solid #90EE90 ;
+    color: #90EE90;
+}
+.sc-button-outline-rebooked:hover
+{
+    background-color: #90EE90;
+    border: 1px solid #90EE90;
+    color: #FFFFFF;
+}
+
+.sc-button-outline-no-show
+{
+    background-color: transparent;
+    border: 1px solid #E53B3B ;
+    color: #E53B3B;
+}
+.sc-button-outline-no-show:hover
+{
+    background-color: #E53B3B;
+    border: 1px solid #E53B3B;
+    color: #FFFFFF;
+}

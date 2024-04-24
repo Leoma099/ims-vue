@@ -1,0 +1,124 @@
+// Name:            Off-canvas
+// Description:     Component to create an off-canvas sidebar
+//
+// Component:       `sc-offcanvas`
+//
+// Sub-components:  `sc-offcanvas-header`
+//                  `sc-offcanvas-title`
+//                  `sc-offcanvas-body`
+//                  `sc-offcanvas-top`
+//                  `sc-offcanvas-bottom`
+//                  `sc-offcanvas-start`
+//                  `sc-offcanvas-end`
+//                  `sc-offcanvas-background`
+//
+// ========================================================================
+
+// Variables
+// ========================================================================
+.sc-offcanvas
+{
+    position: fixed;
+    bottom: 0;
+    z-index: 1055;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    color: $default;
+    visibility: hidden;
+    background-color: $grayish;
+    background-clip: padding-box;
+    transition: transform 0.3s ease-in-out;
+}
+.sc-offcanvas-header
+{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+.sc-offcanvas-header .sc-button-close
+{
+    padding: calc(1rem * 0.5);
+    margin: calc(-0.5 * 1rem)
+    calc(-0.5 * 1rem)
+    calc(-0.5 * 1rem) auto;
+}
+.sc-offcanvas-body
+{
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+}
+.sc-offcanvas-title
+{
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+.sc-offcanvas-start
+{
+    top: 0;
+    left: 0;
+    width: 400px;
+    border-right: 1px solid $default;
+    transform: translateX(-100%);
+}
+.sc-offcanvas-end
+{
+    top: 0;
+    right: 0;
+    width: 400px;
+    border-left: 1px solid $default;
+    transform: translateX(100%);
+}
+.sc-offcanvas-top
+{
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 30vh;
+    max-height: 100%;
+    border-bottom: 1px solid $default;
+    transform: translateY(-100%);
+}
+.sc-offcanvas-bottom
+{
+    right: 0;
+    left: 0;
+    height: 30vh;
+    max-height: 100%;
+    border-top: 1px solid $default;
+    transform: translateY(100%);
+}
+.sc-offcanvas-backdrop
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+}
+
+.sc-offcanvas-backdrop .sc-fade
+{
+    opacity: 0;
+}
+
+.sc-offcanvas-backdrop .sc-show
+{
+    opacity: 0.5;
+}
+
+.sc-show:not(.sc-hidding),
+.sc-showing
+{
+    transform: none;
+}
+
+.sc-showing,
+.sc-hididng,
+.sc-show
+{
+    visibility: visible;
+}

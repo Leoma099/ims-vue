@@ -1,0 +1,88 @@
+// helpers
+@import "../scss/helpers/variables";
+@import "../scss/helpers/mixins";
+@import "../scss/helpers/functions";
+
+// background
+@import "../scss/backgrounds/theme-color";
+@import "../scss//backgrounds/background";
+
+// borders
+@import "../scss/borders/border-radius";
+
+// components
+@import "../scss/components/autocomplete";
+@import "../scss/components/avatars";
+@import "../scss/components/badge";
+@import "../scss/components/button";
+@import "../scss/components/card";
+@import "../scss/components/container";
+@import "../scss/components/chips";
+@import "../scss/components/loaders";
+@import "../scss/components/list-group";
+@import "../scss/components/modal";
+@import "../scss/components/notification";
+@import "../scss/components/offcanvas";
+@import "../scss/components/pagination";
+@import "../scss/components/placeholders";
+@import "../scss/components/query-badge";
+
+// flexbox and grid
+@import "../scss/flexbox-&-grid/flex";
+@import "../scss/flexbox-&-grid/grid";
+@import "../scss/flexbox-&-grid/gap";
+@import "../scss/flexbox-&-grid/justify";
+@import "../scss/flexbox-&-grid/align";
+@import "../scss/flexbox-&-grid/place";
+
+// Forms
+@import "../scss/forms/form-control";
+
+// Layouts
+@import "../scss/layouts/overflow";
+@import "../scss/layouts/container";
+@import "../scss/layouts/content";
+@import "../scss/layouts/aspect-ratio";
+@import "../scss/layouts/position";
+@import "../scss/layouts/sidebar";
+
+// Sizing
+@import "../scss/sizing/width";
+@import "../scss/sizing/height";
+
+// spacing
+@import "../scss/spacing/padding";
+@import "../scss/spacing/margin";
+
+// typography
+@import "../scss/typography/text-color";
+@import "../scss/typography/text";
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: #eeeeee;
+}
+
+// ---------- custom scrollbar ---------- //
+::-webkit-scrollbar
+{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track
+{
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background-color: $secondary;
+    border-radius: 10px;
+}

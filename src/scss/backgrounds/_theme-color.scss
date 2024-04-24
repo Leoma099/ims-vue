@@ -1,0 +1,50 @@
+
+$color-primary:             $primary !default;
+$color-secondary:           $secondary !default;
+$color-success:             $success !default;
+$color-danger:              $danger !default;
+$color-warning:             $warning !default;
+$color-info:                $info !default;
+$color-link:                $link !default;
+$color-inverse:             $inverse;
+$color-disabled:            $disabled !default;
+$color-default:             $default !default;
+
+@include create-theme-status-color-code(background);
+
+.sc-background-primary
+{
+    color: $color-inverse;
+}
+.sc-background-secondary
+{
+    color: $color-inverse;
+}
+.sc-background-success
+{
+    color: $color-inverse;
+}
+.sc-background-warning
+{
+    color: $color-inverse;
+}
+.sc-background-danger
+{
+    color: $color-inverse;
+}
+.sc-background-info
+{
+    color: $color-inverse;
+}
+.sc-background-inverse
+{
+    color: $color-default;
+}
+.sc-background-disabled
+{
+    color: $color-inverse;
+}
+.sc-background-default
+{
+    color: $color-inverse;
+}

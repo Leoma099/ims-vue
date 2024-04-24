@@ -1,0 +1,63 @@
+// Name:            Chips
+// Description:     Component to create chip
+//
+// Component:       `sc-label`
+//
+// Modifier:        `sc-label-default`
+//                  `sc-label-primary`
+//                  `sc-label-secondary`
+//                  `sc-label-success`
+//                  `sc-label-warning`
+//                  `sc-label-danger`
+//
+// ========================================================================
+
+// Variables
+// ========================================================================
+
+// $chips-padding-vertical:                        4px !default;
+// $chips-padding-horizontal:                      (margin(small) + 4px) !default;
+
+// $chips-background:                              transparentize(color(primary), 0.9) !default;
+// $chips-line-height:                             font(line-height) !default;
+// $chips-font-size:                               font-size(small) !default;
+// $chips-color:                                   color(primary) !default;
+
+// $chips-margin-vertical:                         margin(xsmall) !default;
+
+/* ==================================================
+    Component: Chips
+   ================================================== */
+
+// .sc-chips
+// {
+//     display: inline-block;
+//     padding: $chips-padding-vertical $chips-padding-horizontal;
+//     background: $chips-background;
+//     border-radius: 50px;
+//     line-height: $chips-line-height;
+//     font-size: $chips-font-size;
+//     color: $chips-color;
+//     vertical-align: middle;
+//     transition: background 0.3s ease-in-out;
+//     margin: $chips-margin-vertical 0px;
+// }
+
+.sc-chips:not(:last-child)
+{
+    margin-right: 2px;
+}
+
+
+
+/* Close
+   ================================================== */
+
+// .sc-chips .sc-chips-close{
+//     cursor: pointer;
+//     color: color(primary);
+//     padding-left: 8px;
+//     float: right;
+//     font-size: $chips-font-size;
+//     line-height: $chips-line-height;
+// }

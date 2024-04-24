@@ -1,0 +1,237 @@
+//  ==================================================
+//  Component:          Variables
+//  Description:        Defines common values which are used across all components
+//  ==================================================
+
+
+
+/* Breakpoint
+   ================================================== */
+
+// Phone Portrait:      Galaxy (360x640), iPhone 6 (375x667), iphone 6+ (414x736)
+// Phone Landscape:     Galaxy (640x360), iPhone 6 (667x375), iPhone 6+ (736x414)
+// Tablet Portrait:     iPad (768x1024), Galaxy Tab (800x1280),
+// Tablet Landscape:    iPad (1024x768), iPad Pro (1024x1366),
+// Desktop:             Galaxy Tab (1280x800), iPad Pro (1366x1024) 
+$breakpoint: () !default;
+$breakpoint:(
+    small:      640px,
+    medium:     960px,
+    large:      1200px,
+    xlarge:     1600px
+);
+
+$breakpoint-max: () !default;
+$breakpoint-max:(
+    xsmall:     (640px - 1),
+    small:      (960px - 1),
+    medium:     (1200px - 1),
+    large:      (1600px - 1)
+);
+
+
+
+/* Typography
+   ================================================== */
+$font: () !default;
+$font:(
+    font-family:        Poppins,
+    font-size:          16px,
+    kerning:            0.05rem,
+    line-height:        1.5,
+);
+
+$font-size: () !default;
+$font-size:(
+    small:          0.875rem,
+    medium:         1.25rem,
+    large:          1.5rem,
+    xlarge:         2rem,
+    xxlarge:        2.625rem
+);
+
+$font-weight: () !default;
+$font-weight:(
+    light:          300,
+    regular:        400,
+    bold:           600,
+    black:          800
+);
+
+/* Color
+   ================================================== */
+
+// PRIMARY COLOR
+$red:              #e62321 !default;
+$yellow:           #f5e71a !default;
+$blue:             #2b499a !default;
+
+// SECONDARY COLOR
+$purple:           #514594 !default;
+$green:            #69b42d !default;
+$orange:           #e8571B !default;
+
+// TERTIARY COLOR
+$orange-yellow:    #f18218 !default;
+$yellow-orange:    #fabb0f !default;
+$green-yellow:     #afca0d !default;
+$blue-green:       #00a7ac !default;
+$cobalt-blue:      #1E87F0 !default;
+$ocean-blue:       #0a70b8 !default;
+$purple:           #514594 !default;
+$pink:             #e63480 !default;
+
+// DARK AND LIGHT COLOR
+$black:            #000000 !default;
+$gray:             #808080 !default;
+$light-gray:       #c0c0c0 !default;
+$grayish:          #dcdcdc !default;
+$adjust-white:     #F8F8F8 !default;
+$white:            #ffffff !default;
+
+// STATUS COLOR
+$primary:          $ocean-blue;
+$secondary:        $gray;
+$success:          $green;
+$danger:           $red;
+$warning:          $yellow-orange;
+$info:             $blue-green;
+$link:             $cobalt-blue;
+$inverse:          $white;
+$disabled:         $light-gray;
+$default:          $black;
+
+// Used in creating text modifiers
+$text-color: () !default;
+$text-color:(
+    primary:          $ocean-blue,
+    secondary:        $gray,
+    success:          $green,
+    danger:           $red,
+    warning:          $yellow-orange,
+    info:             $blue-green,
+    link:             $cobalt-blue,
+    inverse:          $white,
+    disabled:         $light-gray,
+    default:          $black,
+);
+
+// Use for creating link
+$link-color: () !default;
+$link-color: (
+    base:   $cobalt-blue,
+    light:  lighten($cobalt-blue, 5%),
+    dark:   darken($cobalt-blue, 5%)
+);
+
+// Global defauylt background
+$global-background:             $white !default;
+$global-muted-background:       $adjust-white !default;
+
+// Used in creating background modifiers
+$theme-color: () !default;
+$theme-color:(
+    primary:          $ocean-blue,
+    secondary:        $gray,
+    success:          $green,
+    danger:           $red,
+    warning:          $yellow-orange,
+    info:             $blue-green,
+    link:             $cobalt-blue,
+    inverse:          $white,
+    disabled:         $light-gray,
+    default:          $black,
+);
+
+// Used in creating button background modifiers
+$button-background-color: () !default;
+$button-background-color:
+(
+    primary:          $ocean-blue,
+    secondary:        $gray,
+    success:          $green,
+    danger:           $red,
+    warning:          $yellow-orange,
+    info:             $blue-green,
+    link:             $cobalt-blue,
+    inverse:          $white,
+    disabled:         $light-gray,
+    default:          $black,
+);
+
+/* Color Yiq
+   ================================================== */
+
+   $yiq-contrasted-threshold:  180 !default;
+   $yiq-text-dark:             $gray !default;
+   $yiq-text-light:            $white !default;
+   
+   
+   
+   /* Border Radius
+      ================================================== */
+   $border: () !default;
+   $border:(
+       border-radius:      0.25rem,
+       border-width:       1px,
+       border-color:       #E5E5E5
+   );
+   
+   
+   /* Box Shadow
+      ================================================== */
+   $box-shadow:() !default;
+   $box-shadow:(
+       small:          0 2px 8px #00000014,
+       medium:         0 5px 15px #0000001f,
+       large:          0 14px 25px #00000029,
+       xlarge:         0 28px 50px #00000029
+   );
+
+/* Spacing
+   ================================================== */
+
+// Used in margin, section, list
+$margin: () !default;
+$margin:(
+    global:    20px,
+    xsmall:     5px,
+    small:     10px,
+    medium:    40px,
+    large:     70px,
+    xlarge:    140px
+);
+
+
+// Used in grid, column, containers, align, cards and padding
+$gutter: () !default;
+$gutter:(
+    xsmall:     15px,
+    small:      30px,
+    medium:     40px,
+    large:      70px
+);
+
+/* Control height
+   ================================================== */
+   $control-height:() !default;
+   $control-height:(
+       small:      30px,
+       medium:     40px,
+       large:      55px
+   );
+
+/* layer
+   ================================================== */
+   $layer: () !default;
+   $layer:(
+       dropdown:               1000,
+       navbar:                 1050,
+       sidebar:                1100,
+       offcanvas:              1150,
+       modal:                  1200,
+       floating-button:        1250,
+       tooltip:                1300,
+       notification:           1350,
+       lightbox:               1400
+   );
